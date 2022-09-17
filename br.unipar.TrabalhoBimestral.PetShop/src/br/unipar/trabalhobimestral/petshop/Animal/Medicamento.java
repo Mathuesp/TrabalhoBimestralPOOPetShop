@@ -6,4 +6,49 @@ public class Medicamento {
     private String descricao;
     private String seloAnvisa;
     private double valor;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLote() {
+        return lote;
+    }
+
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getSeloAnvisa() {
+        return seloAnvisa;
+    }
+
+    public void setSeloAnvisa(String seloAnvisa) {
+        this.seloAnvisa = seloAnvisa;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Medicamento{" + "id=" + id + ", lote=" + lote + ", descricao=" + descricao + ", seloAnvisa=" + seloAnvisa + ", valor=" + valor + '}';
+    }
 }

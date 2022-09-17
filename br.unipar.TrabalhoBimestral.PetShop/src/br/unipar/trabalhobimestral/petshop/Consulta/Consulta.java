@@ -8,8 +8,42 @@ public class Consulta {
     private int id;
     private Date dataConsulta;
     private Veterinario veterinario;
-    private Proprietario proprietario;
-    private Animal animal;
     private double valorConsulta;
-    private double valorTotal;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDataConsulta() {
+        return dataConsulta;
+    }
+
+    public void setDataConsulta(Date dataConsulta) {
+        this.dataConsulta = dataConsulta;
+    }
+
+    public Veterinario getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
+    }
+
+    public double getValorConsulta() {
+        return valorConsulta;
+    }
+
+    public void setValorConsulta(double valorConsulta) {
+        this.valorConsulta = valorConsulta;
+    }
+
+    @Override
+    public String toString() {
+        return "Consulta{" + "id=" + id + ", dataConsulta=" + dataConsulta + ", veterinario=" + veterinario + ", valorConsulta=" + valorConsulta + '}';
+    }
 }
