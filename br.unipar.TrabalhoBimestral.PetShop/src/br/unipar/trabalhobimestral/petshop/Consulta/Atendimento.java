@@ -12,8 +12,8 @@ public class Atendimento {
     private double valorTotal;
     private boolean possuiExame;
     private boolean possuiVacinacao;
-    private boolean possuibanho;
-    private boolean possuitosa;
+    private boolean possuiBanho;
+    private boolean possuiTosa;
     private ConsultaExame consultaExame;
     private ConsultaVacinacao consultaVacinacao;
     private Banho banho;
@@ -75,20 +75,20 @@ public class Atendimento {
         this.possuiVacinacao = possuiVacinacao;
     }
 
-    public boolean isPossuibanho() {
-        return possuibanho;
+    public boolean isPossuiBanho() {
+        return possuiBanho;
     }
 
-    public void setPossuibanho(boolean possuibanho) {
-        this.possuibanho = possuibanho;
+    public void setPossuiBanho(boolean possuiBanho) {
+        this.possuiBanho = possuiBanho;
     }
 
-    public boolean isPossuitosa() {
-        return possuitosa;
+    public boolean isPossuiTosa() {
+        return possuiTosa;
     }
 
-    public void setPossuitosa(boolean possuitosa) {
-        this.possuitosa = possuitosa;
+    public void setPossuiTosa(boolean possuiTosa) {
+        this.possuiTosa = possuiTosa;
     }
 
     public ConsultaExame getConsultaExame() {
@@ -124,6 +124,21 @@ public class Atendimento {
     }
     
     public void calculaValorTotal(){
+        double valorTotal;
         
+        valorTotal = (this.consultaExame.getValorConsulta() +
+                      this.consultaExame.getExame().getValor() +
+                      this.consultaExame.getMedicamento().getValor() +
+                      this.consultaVacinacao.getValorConsulta() +
+                      this.consultaVacinacao.getVacina().getValorDose() +
+                      this.banho.getValorBanho() +
+                      this.tosa.getValorTosa());
+        
+        setValorTotal(valorTotal);
+    }
+
+    @Override
+    public String toString() {
+        return "Atendimento{" + "id=" + id + ", animal=" + animal + ", proprietario=" + proprietario + ", formaPagamento=" + formaPagamento + ", valorTotal=" + valorTotal + ", possuiExame=" + possuiExame + ", possuiVacinacao=" + possuiVacinacao + ", possuibanho=" + possuiBanho + ", possuitosa=" + possuiTosa + ", consultaExame=" + consultaExame + ", consultaVacinacao=" + consultaVacinacao + ", banho=" + banho + ", tosa=" + tosa + '}';
     }
 }

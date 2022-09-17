@@ -9,6 +9,16 @@ public class Vacina {
     private int intervaloDoses;
     private double valorDose;
 
+    public Vacina(int id, String lote, String descricao, String seloAnvisa, int dosesNecessarias, int intervaloDoses, double valorDose) {
+        this.id = id;
+        this.lote = lote;
+        this.descricao = descricao;
+        this.seloAnvisa = seloAnvisa;
+        this.dosesNecessarias = dosesNecessarias;
+        this.intervaloDoses = intervaloDoses;
+        this.valorDose = valorDose;
+    }
+
     public int getId() {
         return id;
     }

@@ -7,6 +7,15 @@ public class Cartao extends FormaPagamento{
     private String cvv;
     private Bandeira bandeira;
 
+    public Cartao(String numCartao, String nmTitular, String dtVencimento, String cvv, Bandeira bandeira, int id, String descricao) {
+        super(id, descricao);
+        this.numCartao = numCartao;
+        this.nmTitular = nmTitular;
+        this.dtVencimento = dtVencimento;
+        this.cvv = cvv;
+        this.bandeira = bandeira;
+    }
+
     public String getNumCartao() {
         return numCartao;
     }

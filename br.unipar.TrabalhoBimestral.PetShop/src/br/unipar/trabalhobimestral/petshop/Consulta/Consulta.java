@@ -10,6 +10,13 @@ public class Consulta {
     private Veterinario veterinario;
     private double valorConsulta;
 
+    public Consulta(int id, Date dataConsulta, Veterinario veterinario, double valorConsulta) {
+        this.id = id;
+        this.dataConsulta = dataConsulta;
+        this.veterinario = veterinario;
+        this.valorConsulta = valorConsulta;
+    }
+
     public int getId() {
         return id;
     }

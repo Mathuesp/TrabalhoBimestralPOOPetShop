@@ -1,11 +1,20 @@
 package br.unipar.trabalhobimestral.petshop.Consulta;
 
 import br.unipar.trabalhobimestral.petshop.Animal.*;
+import br.unipar.trabalhobimestral.petshop.Pessoa.Veterinario;
+import java.util.Date;
 
 public class ConsultaExame extends Consulta{
     private Exame exame;
     private Medicamento medicamento;
     private String prescricaoMedicamento;
+
+    public ConsultaExame(Exame exame, Medicamento medicamento, String prescricaoMedicamento, int id, Date dataConsulta, Veterinario veterinario, double valorConsulta) {
+        super(id, dataConsulta, veterinario, valorConsulta);
+        this.exame = exame;
+        this.medicamento = medicamento;
+        this.prescricaoMedicamento = prescricaoMedicamento;
+    }
 
     public Exame getExame() {
         return exame;

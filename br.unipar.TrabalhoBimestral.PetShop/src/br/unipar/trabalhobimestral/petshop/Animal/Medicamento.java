@@ -7,6 +7,14 @@ public class Medicamento {
     private String seloAnvisa;
     private double valor;
 
+    public Medicamento(int id, String lote, String descricao, String seloAnvisa, double valor) {
+        this.id = id;
+        this.lote = lote;
+        this.descricao = descricao;
+        this.seloAnvisa = seloAnvisa;
+        this.valor = valor;
+    }
+
     public int getId() {
         return id;
     }

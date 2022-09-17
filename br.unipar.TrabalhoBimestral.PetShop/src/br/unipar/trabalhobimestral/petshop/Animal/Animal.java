@@ -9,6 +9,13 @@ public class Animal {
     private PorteENUM porte;
     private ArrayList<Vacina> vacina;
 
+    public Animal(int id, String nome, TipoAnimalENUM tipoAnimal, PorteENUM porte) {
+        this.id = id;
+        this.nome = nome;
+        this.tipoAnimal = tipoAnimal;
+        this.porte = porte;
+    }
+
     public int getId() {
         return id;
     }
