@@ -5,8 +5,10 @@ import br.unipar.trabalhobimestral.petshop.Animal.*;
 import br.unipar.trabalhobimestral.petshop.Consulta.*;
 import br.unipar.trabalhobimestral.petshop.Pagamento.*;
 import br.unipar.trabalhobimestral.petshop.Pessoa.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 public class Main {
@@ -34,6 +36,8 @@ public class Main {
         Bandeira visa = new Bandeira("VISA");
         
         CartaoCredito credito = new CartaoCredito(2, "212974928374", "PADRAO", "12/28", "000", visa, 1, "Pagamento padrão");
+        
+        Dinheiro dinheiro = new Dinheiro(2, "Dinheiro");
         
         Veterinario veterinario = new Veterinario();
         veterinario.setId(0);
@@ -90,11 +94,48 @@ public class Main {
         primeiroAtendimento.setProprietario(paulinho);
         primeiroAtendimento.setAnimal(paulinho.getAnimal().get(0));
         primeiroAtendimento.setPossuiExame(true);
-        primeiroAtendimento.setPossuiVacinacao(true);
+        primeiroAtendimento.setPossuiVacinacao(false);
         primeiroAtendimento.setPossuiBanho(true);
-        primeiroAtendimento.setPossuiTosa(true);
-        primeiroAtendimento.setConsultaExame(new ConsultaExame(raioX, dipirona, "Tomar de 12h/12h", 1, new Date(), veterinario, 50.0));
+        primeiroAtendimento.setPossuiTosa(false);
         
+        primeiroAtendimento.setConsultaVacinacao(new ConsultaVacinacao());
+        primeiroAtendimento.setTosa(new Tosa());
+        primeiroAtendimento.setConsultaExame(new ConsultaExame(raioX, dipirona, "Tomar de 12h/12h", 1, LocalDate.now(), veterinario, 50.0));
+        primeiroAtendimento.setBanho(new Banho(paulinho.getAnimal().get(0), LocalDate.now()));
+        
+        primeiroAtendimento.calculaValorTotal();
+        ArrayList<FormaPagamento> formaPagamentoAtendimento1 = new ArrayList();
+        formaPagamentoAtendimento1.add(credito);
+        primeiroAtendimento.setFormaPagamento(formaPagamentoAtendimento1);
+        
+        Atendimento segundoAtendimento = new Atendimento();
+        segundoAtendimento.setId(2);
+        segundoAtendimento.setProprietario(anderson);
+        segundoAtendimento.setAnimal(anderson.getAnimal().get(0));
+        segundoAtendimento.setPossuiExame(false);
+        segundoAtendimento.setPossuiVacinacao(true);
+        segundoAtendimento.setPossuiBanho(false);
+        segundoAtendimento.setPossuiTosa(true);
+        
+        segundoAtendimento.setConsultaExame(new ConsultaExame());
+        segundoAtendimento.setBanho(new Banho());
+        ConsultaVacinacao consVac = new ConsultaVacinacao(raiva, false, 1, LocalDate.now(), veterinario, 50);
+        consVac.setProximasDoses(consVac.defineProximaDose(raiva));
+        
+        segundoAtendimento.setTosa(new Tosa(anderson.getAnimal().get(0), LocalDate.now()));
+        
+        segundoAtendimento.setConsultaVacinacao(consVac);
+        
+        ArrayList<Vacina> vacinas = new ArrayList();
+        vacinas.add(raiva);
+        anderson.getAnimal().get(0).setVacina(vacinas);
+        
+        segundoAtendimento.calculaValorTotal();
+        ArrayList<FormaPagamento> formaSegundoAtendimento1 = new ArrayList();
+        formaSegundoAtendimento1.add(dinheiro);
+        segundoAtendimento.setFormaPagamento(formaSegundoAtendimento1);
+        
+        System.out.println(primeiroAtendimento.toString() + "\n\n" + segundoAtendimento.toString());
     }
     
     public static Endereco criarLocalidade(){

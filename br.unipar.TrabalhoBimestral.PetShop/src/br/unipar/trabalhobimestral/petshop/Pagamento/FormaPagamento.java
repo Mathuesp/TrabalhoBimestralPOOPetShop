@@ -3,7 +3,6 @@ package br.unipar.trabalhobimestral.petshop.Pagamento;
 public class FormaPagamento {
     private int id;
     private String descricao;
-    private double valorPagamento;
 
     public FormaPagamento(int id, String descricao) {
         this.id = id;
@@ -26,16 +25,8 @@ public class FormaPagamento {
         this.descricao = descricao;
     }
 
-    public double getValorPagamento() {
-        return valorPagamento;
-    }
-
-    public void setValorPagamento(double valorPagamento) {
-        this.valorPagamento = valorPagamento;
-    }
-
     @Override
     public String toString() {
-        return "FormaPagamento{" + "id=" + id + ", descricao=" + descricao + ", valorPagamento=" + valorPagamento + '}';
+        return "FormaPagamento{" + "id=" + id + ", descricao=" + descricao + '}';
     }
 }

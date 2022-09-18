@@ -3,12 +3,13 @@ package br.unipar.trabalhobimestral.petshop.Consulta;
 import br.unipar.trabalhobimestral.petshop.Animal.Animal;
 import br.unipar.trabalhobimestral.petshop.Pagamento.FormaPagamento;
 import br.unipar.trabalhobimestral.petshop.Pessoa.Proprietario;
+import java.util.ArrayList;
 
 public class Atendimento {
     private int id;
     private Animal animal;
     private Proprietario proprietario;
-    private FormaPagamento formaPagamento;    
+    private ArrayList<FormaPagamento> formaPagamento;    
     private double valorTotal;
     private boolean possuiExame;
     private boolean possuiVacinacao;
@@ -43,11 +44,11 @@ public class Atendimento {
         this.proprietario = proprietario;
     }
 
-    public FormaPagamento getFormaPagamento() {
+    public ArrayList<FormaPagamento> getFormaPagamento() {
         return formaPagamento;
     }
 
-    public void setFormaPagamento(FormaPagamento formaPagamento) {
+    public void setFormaPagamento(ArrayList<FormaPagamento> formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 
@@ -139,6 +140,6 @@ public class Atendimento {
 
     @Override
     public String toString() {
-        return "Atendimento{" + "id=" + id + ", animal=" + animal + ", proprietario=" + proprietario + ", formaPagamento=" + formaPagamento + ", valorTotal=" + valorTotal + ", possuiExame=" + possuiExame + ", possuiVacinacao=" + possuiVacinacao + ", possuibanho=" + possuiBanho + ", possuitosa=" + possuiTosa + ", consultaExame=" + consultaExame + ", consultaVacinacao=" + consultaVacinacao + ", banho=" + banho + ", tosa=" + tosa + '}';
+        return "Atendimento{" + "id=" + id + ", animal=" + animal + ", proprietario=" + proprietario + ", formaPagamento=" + formaPagamento + ", valorTotal=" + valorTotal + ", possuiExame=" + possuiExame + ", possuiVacinacao=" + possuiVacinacao + ", possuiBanho=" + possuiBanho + ", possuiTosa=" + possuiTosa + ", consultaExame=" + consultaExame + ", consultaVacinacao=" + consultaVacinacao + ", banho=" + banho + ", tosa=" + tosa + '}';
     }
 }

@@ -1,21 +1,26 @@
 package br.unipar.trabalhobimestral.petshop.Consulta;
 
 import br.unipar.trabalhobimestral.petshop.Animal.Animal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Tosa {
-    private Date dataTosa;
-    private double valorTosa;
+    private LocalDate dataTosa;
+    private double valorTosa = 0;
 
-    public Tosa(Animal animal) {
-        this.valorTosa = animal.getPorte().getValorTosa();
+    public Tosa() {
     }
 
-    public Date getDataTosa() {
+    public Tosa(Animal animal, LocalDate dataTosa) {
+        this.valorTosa = animal.getPorte().getValorTosa();
+        this.dataTosa = dataTosa;
+    }
+
+    public LocalDate getDataTosa() {
         return dataTosa;
     }
 
-    public void setDataTosa(Date dataTosa) {
+    public void setDataTosa(LocalDate dataTosa) {
         this.dataTosa = dataTosa;
     }
 

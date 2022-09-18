@@ -1,21 +1,26 @@
 package br.unipar.trabalhobimestral.petshop.Consulta;
 
 import br.unipar.trabalhobimestral.petshop.Animal.Animal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Banho {
-    private Date dataBanho;
-    private double valorBanho;
+    private LocalDate dataBanho;
+    private double valorBanho = 0;
 
-    public Banho(Animal animal) {
+    public Banho() {
+    }
+
+    public Banho(Animal animal, LocalDate dataBanho) {
+        this.dataBanho = dataBanho;
         this.valorBanho = animal.getPorte().getValorBanho();
     }
 
-    public Date getDataBanho() {
+    public LocalDate getDataBanho() {
         return dataBanho;
     }
 
-    public void setDataBanho(Date dataBanho) {
+    public void setDataBanho(LocalDate dataBanho) {
         this.dataBanho = dataBanho;
     }
 

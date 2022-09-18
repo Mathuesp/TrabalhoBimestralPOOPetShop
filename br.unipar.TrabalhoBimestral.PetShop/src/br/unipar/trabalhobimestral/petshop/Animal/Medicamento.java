@@ -5,7 +5,10 @@ public class Medicamento {
     private String lote;
     private String descricao;
     private String seloAnvisa;
-    private double valor;
+    private double valor = 0;
+
+    public Medicamento() {
+    }
 
     public Medicamento(int id, String lote, String descricao, String seloAnvisa, double valor) {
         this.id = id;

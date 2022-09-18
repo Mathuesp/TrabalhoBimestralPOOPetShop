@@ -3,7 +3,10 @@ package br.unipar.trabalhobimestral.petshop.Animal;
 public class Exame {
     private int id;
     private String descricao;
-    private double valor;
+    private double valor = 0;
+
+    public Exame() {
+    }
 
     public Exame(int id, String descricao, double valor) {
         this.id = id;

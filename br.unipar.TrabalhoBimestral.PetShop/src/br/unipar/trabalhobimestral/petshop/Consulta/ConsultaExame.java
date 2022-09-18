@@ -2,6 +2,7 @@ package br.unipar.trabalhobimestral.petshop.Consulta;
 
 import br.unipar.trabalhobimestral.petshop.Animal.*;
 import br.unipar.trabalhobimestral.petshop.Pessoa.Veterinario;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ConsultaExame extends Consulta{
@@ -9,7 +10,12 @@ public class ConsultaExame extends Consulta{
     private Medicamento medicamento;
     private String prescricaoMedicamento;
 
-    public ConsultaExame(Exame exame, Medicamento medicamento, String prescricaoMedicamento, int id, Date dataConsulta, Veterinario veterinario, double valorConsulta) {
+    public ConsultaExame() {
+        exame = new Exame();
+        medicamento = new Medicamento();
+    }
+
+    public ConsultaExame(Exame exame, Medicamento medicamento, String prescricaoMedicamento, int id, LocalDate dataConsulta, Veterinario veterinario, double valorConsulta) {
         super(id, dataConsulta, veterinario, valorConsulta);
         this.exame = exame;
         this.medicamento = medicamento;

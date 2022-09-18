@@ -7,7 +7,10 @@ public class Vacina {
     private String seloAnvisa;
     private int dosesNecessarias;
     private int intervaloDoses;
-    private double valorDose;
+    private double valorDose = 0;
+
+    public Vacina() {
+    }
 
     public Vacina(int id, String lote, String descricao, String seloAnvisa, int dosesNecessarias, int intervaloDoses, double valorDose) {
         this.id = id;

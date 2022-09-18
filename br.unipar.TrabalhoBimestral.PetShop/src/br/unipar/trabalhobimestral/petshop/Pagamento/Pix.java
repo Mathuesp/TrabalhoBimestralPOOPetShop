@@ -6,6 +6,12 @@ public class Pix extends FormaPagamento{
     private String chave;
     private String origem;
 
+    public Pix(String chave, String origem, int id, String descricao) {
+        super(id, descricao);
+        this.chave = chave;
+        this.origem = origem;
+    }
+
     public String getChave() {
         return chave;
     }

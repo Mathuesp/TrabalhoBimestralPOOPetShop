@@ -2,15 +2,19 @@ package br.unipar.trabalhobimestral.petshop.Consulta;
 
 import br.unipar.trabalhobimestral.petshop.Animal.*;
 import br.unipar.trabalhobimestral.petshop.Pessoa.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Consulta {
     private int id;
-    private Date dataConsulta;
+    private LocalDate dataConsulta;
     private Veterinario veterinario;
-    private double valorConsulta;
+    private double valorConsulta = 0;
 
-    public Consulta(int id, Date dataConsulta, Veterinario veterinario, double valorConsulta) {
+    public Consulta() {
+    }
+
+    public Consulta(int id, LocalDate dataConsulta, Veterinario veterinario, double valorConsulta) {
         this.id = id;
         this.dataConsulta = dataConsulta;
         this.veterinario = veterinario;
@@ -25,11 +29,11 @@ public class Consulta {
         this.id = id;
     }
 
-    public Date getDataConsulta() {
+    public LocalDate getDataConsulta() {
         return dataConsulta;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
+    public void setDataConsulta(LocalDate dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
 
